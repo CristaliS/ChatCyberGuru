@@ -1,0 +1,16 @@
+D:\C#\ChatCyberGuru\ChatCyberGuru\bin\Debug\ChatCyberGuru.exe.config
+D:\C#\ChatCyberGuru\ChatCyberGuru\bin\Debug\ChatCyberGuru.exe
+D:\C#\ChatCyberGuru\ChatCyberGuru\bin\Debug\ChatCyberGuru.pdb
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.csprojResolveAssemblyReference.cache
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\MainWindow.g.cs
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\App.g.cs
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru_MarkupCompile.cache
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru_MarkupCompile.lref
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\MainWindow.baml
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.g.resources
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.Properties.Resources.resources
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.csproj.GenerateResource.Cache
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.exe
+D:\C#\ChatCyberGuru\ChatCyberGuru\obj\Debug\ChatCyberGuru.pdb
+D:\C#\ChatCyberGuru\ChatCyberGuru\bin\Debug\Helper.dll
+D:\C#\ChatCyberGuru\ChatCyberGuru\bin\Debug\Helper.pdb

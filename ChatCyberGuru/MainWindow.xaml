@@ -5,15 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatCyberGuru"
         mc:Ignorable="d"
-        Title="Chat Cyber Guru" Height="350" Width="525" ResizeMode="NoResize">
+        Title="Chat Cyber Guru" Height="381.886" Width="568.75" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow">
     <Grid Background="#FF301A00">
-        <RichTextBox x:Name="rtbChat" HorizontalAlignment="Left" Height="213" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
+        <RichTextBox x:Name="rtbChat" HorizontalAlignment="Left" Margin="10,10,0,130" Width="384" VerticalScrollBarVisibility="Auto">
             <FlowDocument/>
         </RichTextBox>
-        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="432,255,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="Black" Foreground="#FF00FF17" Click="btnSend_Click"/>
-        <RichTextBox x:Name="rtbMessage" HorizontalAlignment="Left" Height="81" Margin="10,228,0,0" VerticalAlignment="Top" Width="404">
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="446,279,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="Black" Foreground="#FF00FF17" Click="btnSend_Click"/>
+        <RichTextBox x:Name="rtbMessage" HorizontalAlignment="Left" Margin="10,228,0,12" Width="384">
             <FlowDocument/>
         </RichTextBox>
+        <ListView x:Name="listUsers" Margin="399,10,10,130">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>
