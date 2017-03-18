@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatCyberGuru", "ChatCyberGuru\ChatCyberGuru.csproj", "{1D3D7E72-C27A-47F7-9E1E-BB732253E035}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Helper\Helper.csproj", "{475FBAAA-73CA-48E5-A1CF-73DBAB6C67E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "ChatServer\ChatServer.csproj", "{DD03B270-7750-49DD-B69B-CCBC5E6D37CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{1D3D7E72-C27A-47F7-9E1E-BB732253E035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D3D7E72-C27A-47F7-9E1E-BB732253E035}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D3D7E72-C27A-47F7-9E1E-BB732253E035}.Release|Any CPU.Build.0 = Release|Any CPU
+		{475FBAAA-73CA-48E5-A1CF-73DBAB6C67E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{475FBAAA-73CA-48E5-A1CF-73DBAB6C67E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{475FBAAA-73CA-48E5-A1CF-73DBAB6C67E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{475FBAAA-73CA-48E5-A1CF-73DBAB6C67E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD03B270-7750-49DD-B69B-CCBC5E6D37CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD03B270-7750-49DD-B69B-CCBC5E6D37CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD03B270-7750-49DD-B69B-CCBC5E6D37CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD03B270-7750-49DD-B69B-CCBC5E6D37CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatCyberGuru"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Chat Cyber Guru" Height="350" Width="525" ResizeMode="NoResize">
+    <Grid Background="#FF301A00">
+        <RichTextBox x:Name="rtbChat" HorizontalAlignment="Left" Height="213" Margin="10,10,0,0" VerticalAlignment="Top" Width="497">
+            <FlowDocument/>
+        </RichTextBox>
+        <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="432,255,0,0" VerticalAlignment="Top" Width="75" Height="29" Background="Black" Foreground="#FF00FF17" Click="btnSend_Click"/>
+        <RichTextBox x:Name="rtbMessage" HorizontalAlignment="Left" Height="81" Margin="10,228,0,0" VerticalAlignment="Top" Width="404">
+            <FlowDocument/>
+        </RichTextBox>
+
     </Grid>
 </Window>

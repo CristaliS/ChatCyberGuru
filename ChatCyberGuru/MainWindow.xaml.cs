@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net.Sockets;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Helper;
 
 namespace ChatCyberGuru
 {
@@ -23,6 +16,19 @@ namespace ChatCyberGuru
         public MainWindow()
         {
             InitializeComponent();
+        }
+        //192.168.2.94
+        private void btnSend_Click(object sender, RoutedEventArgs e)
+        {
+            var text = new TextRange(rtbMessage.Document.ContentStart, rtbMessage.Document.ContentEnd).Text;
+            var from = "Stepan";
+            var to = "Tatiana";
+            var msg = new Message(text, from, to, DateTime.Now);
+
+            var tcpClient = new TcpClient(@"127.0.0.1", 4444);
+            IFormatter formatter = new BinaryFormatter();
+            var stream = tcpClient.GetStream();
+            formatter.Serialize(stream, msg);
         }
     }
 }
