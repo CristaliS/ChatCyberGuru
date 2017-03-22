@@ -77,6 +77,9 @@ namespace ChatCyberGuru
             IFormatter formatter = new BinaryFormatter();
             var stream = tcpClient.GetStream();
             formatter.Serialize(stream, msg);
+            stream.Dispose();
+            tcpClient.Dispose();
+            rtbMessage.Document.Blocks.Clear();
         }
     }
 }
