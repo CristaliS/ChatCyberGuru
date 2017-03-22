@@ -58,44 +58,50 @@ namespace ChatServer
 
         static void HandleRequest(object client)
         {
-            var tcpClient = client as TcpClient;
-            using (var stream = tcpClient?.GetStream())
+            try
             {
-                IFormatter formatter = new BinaryFormatter();
-                var msg = formatter.Deserialize(stream) as Message;
-
-                if (msg != null)
+                var tcpClient = client as TcpClient;
+                using (var stream = tcpClient?.GetStream())
                 {
-                    if (!_users.ContainsKey(msg.From))
-                    {
-                        _users.Add(msg.From, tcpClient?.Client.RemoteEndPoint.ToString());
-                    }
+                    IFormatter formatter = new BinaryFormatter();
+                    var msg = formatter.Deserialize(stream) as Message;
 
-                    string user;
-                    if (!_users.TryGetValue(msg.To, out user))
+                    if (msg != null)
+                    {
+                        if (!_users.ContainsKey(msg.From))
+                        {
+                            _users.Add(msg.From, tcpClient?.Client.RemoteEndPoint.ToString());
+                        }
+
+                        string user;
+                        if (!_users.TryGetValue(msg.To, out user))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(@"User Not Found!");
+                            Console.ResetColor();
+                            return;
+                        }
+                        var tcpCl = new TcpClient(user.Split(':')[0], 8888);
+                        IFormatter fmt = new BinaryFormatter();
+                        var strm = tcpCl.GetStream();
+                        fmt.Serialize(strm, msg);
+
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine($"{msg.TimeStamp}: {msg.From} \t{msg.Text}");
+                    }
+                    else
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(@"User Not Found!");
-                        Console.ResetColor();
-                        return;
+                        Console.WriteLine(@"Deserialization ERROR!");
                     }
-                    
-                    var tcpCl = new TcpClient(user.Split(':')[0], 8888);
-                    IFormatter fmt = new BinaryFormatter();
-                    var strm = tcpCl.GetStream();
-                    fmt.Serialize(strm, msg);
-
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine($"{msg.TimeStamp}: {msg.From} \t{msg.Text}");
+                    Console.ResetColor();
                 }
-                else
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(@"Deserialization ERROR!");
-                }
-                Console.ResetColor();
+                tcpClient?.Close();
             }
-            tcpClient?.Close();
+            catch (Exception)
+            {
+                // ignored
+            }
         }
     }
 }

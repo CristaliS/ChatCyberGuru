@@ -14,13 +14,17 @@
         <RichTextBox x:Name="rtbMessage" HorizontalAlignment="Left" Margin="10,434,0,12" Width="506">
             <FlowDocument/>
         </RichTextBox>
-        <ListView x:Name="listUsers" Margin="521,10,10,228">
+        <ListView x:Name="listUsers" Margin="528,10,10,228">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBox x:Name="tbFrom" HorizontalAlignment="Left" Height="23" Margin="600,327,0,0" VerticalAlignment="Top" Width="120" Text="Stepan"/>
+        <Label x:Name="label" Content="From:" HorizontalAlignment="Left" Margin="528,327,0,0" VerticalAlignment="Top" Width="54" Foreground="White"/>
+        <Label x:Name="label_Copy" Content="To:" HorizontalAlignment="Left" Margin="528,358,0,0" VerticalAlignment="Top" Width="54" Foreground="White"/>
+        <TextBox x:Name="tbTo" HorizontalAlignment="Left" Height="23" Margin="600,361,0,0" VerticalAlignment="Top" Width="120" Text="Stepan"/>
 
     </Grid>
 </Window>

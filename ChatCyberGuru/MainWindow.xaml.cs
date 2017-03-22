@@ -15,7 +15,7 @@ namespace ChatCyberGuru
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
         public MainWindow()
         {
@@ -55,13 +55,21 @@ namespace ChatCyberGuru
         {
             while (true)
             {
-                var tcpClient = new TcpClient(@"192.168.2.94", 7777);
-                var stream = tcpClient.GetStream();
-                IFormatter formatter = new BinaryFormatter();
-                var users = formatter.Deserialize(stream) as Dictionary<string, string>;
-                listUsers.Dispatcher.Invoke(() => listUsers.ItemsSource = users?.Select(user => user.Key));
-                tcpClient.Close();
-                Thread.Sleep(1000);
+                try
+                {
+                    var tcpClient = new TcpClient(@"192.168.2.94", 7777);
+                    var stream = tcpClient.GetStream();
+                    IFormatter formatter = new BinaryFormatter();
+                    var users = formatter.Deserialize(stream) as Dictionary<string, string>;
+                    listUsers.Dispatcher.Invoke(() => listUsers.ItemsSource = users?.Select(user => user.Key));
+                    stream.Close();
+                    tcpClient.Close();
+                    Thread.Sleep(500);
+                }
+                catch (Exception)
+                {
+                    // ignored
+                }
             }
         }
 
@@ -69,11 +77,11 @@ namespace ChatCyberGuru
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
             var text = new TextRange(rtbMessage.Document.ContentStart, rtbMessage.Document.ContentEnd).Text;
-            var from = "Stepan";
-            var to = "Stepan";
+            var from = tbFrom.Text;
+            var to = tbTo.Text;
             var msg = new Message(text, from, to, DateTime.Now);
 
-            var tcpClient = new TcpClient(@"127.0.0.1", 4444);
+            var tcpClient = new TcpClient(@"192.168.2.94", 4444);
             IFormatter formatter = new BinaryFormatter();
             var stream = tcpClient.GetStream();
             formatter.Serialize(stream, msg);
